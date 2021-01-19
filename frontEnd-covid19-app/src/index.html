@@ -4,159 +4,399 @@
 <head>
   <meta charset="UTF-8">
   <title>Hello World!</title>
-  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+  <!-- lien font familly -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap"
+    rel="stylesheet">
+  <!--fontawesome-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+    integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link rel="stylesheet" href="index.css">
 </head>
 
 <body>
-  <div class="flex text-gray-800 min-h-screen">
-    <aside class="hidden md:block bg-white px-6 py-5 h-full w-full sm:relative sm:w-64 lg:w-1/5">
-      <a href="#" class="flex min-w-max-content items-center font-bold text-lg p-2 mb-12">
-        <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6 mr-2 text-indigo-700">
-          <path
-            d="M11 17a1 1 0 001.447.894l4-2A1 1 0 0017 15V9.236a1 1 0 00-1.447-.894l-4 2a1 1 0 00-.553.894V17zM15.211 6.276a1 1 0 000-1.788l-4.764-2.382a1 1 0 00-.894 0L4.789 4.488a1 1 0 000 1.788l4.764 2.382a1 1 0 00.894 0l4.764-2.382zM4.447 8.342A1 1 0 003 9.236V15a1 1 0 00.553.894l4 2A1 1 0 009 17v-5.764a1 1 0 00-.553-.894l-4-2z" />
-        </svg>
-        Dashboard UI
-      </a>
-      <nav class="text-gray-600 text-lg font-semibold min-w-max-content space-y-2">
-        <a href="#"
-          class="flex items-center flex-shrink-0 px-5 py-3 rounded-full text-indigo-700 bg-indigo-100 bg-opacity-25">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-7 w-7 mr-2.5 flex-shrink-0">
-            <path
-              d="M3 4a1 1 0 011-1h12a1 1 0 011 1v2a1 1 0 01-1 1H4a1 1 0 01-1-1V4zM3 10a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H4a1 1 0 01-1-1v-6zM14 9a1 1 0 00-1 1v6a1 1 0 001 1h2a1 1 0 001-1v-6a1 1 0 00-1-1h-2z" />
-          </svg>
-          Dashboard
+  <div id="wrapper">
+    <div class="overlay"></div>
+
+    <!-- Sidebar -->
+    <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
+      <div class="simplebar-content" style="padding: 0px;">
+        <a class="sidebar-brand" href="index.html">
+          <span class="align-middle">Vishweb Design</span>
         </a>
-        <a href="#"
-          class="flex items-center flex-shrink-0 px-5 py-3 rounded-full hover:bg-gray-100 hover:bg-opacity-50">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="h-6 w-6 mx-0.5 mr-3 text-gray-400 flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
-          </svg>
-          Objects
-        </a>
-        <a href="#"
-          class="flex items-center flex-shrink-0 px-5 py-3 rounded-full hover:bg-gray-100 hover:bg-opacity-50">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="h-6 w-6 mx-0.5 mr-3 text-gray-400 flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-          </svg>
-          Contacts
-        </a>
-        <a href="#"
-          class="flex items-center flex-shrink-0 px-5 py-3 rounded-full hover:bg-gray-100 hover:bg-opacity-50">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="h-6 w-6 mx-0.5 mr-3 text-gray-400 flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-          </svg>
-          Finances
-        </a>
-        <a href="#"
-          class="flex items-center flex-shrink-0 px-5 py-3 rounded-full hover:bg-gray-100 hover:bg-opacity-50">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="h-6 w-6 mx-0.5 mr-3 text-gray-400 flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M8 4H6a2 2 0 00-2 2v12a2 2 0 002 2h12a2 2 0 002-2V6a2 2 0 00-2-2h-2m-4-1v8m0 0l3-3m-3 3L9 8m-5 5h2.586a1 1 0 01.707.293l2.414 2.414a1 1 0 00.707.293h3.172a1 1 0 00.707-.293l2.414-2.414a1 1 0 01.707-.293H20" />
-          </svg>
-          Messages
-        </a>
-        <a href="#"
-          class="flex items-center flex-shrink-0 px-5 py-3 rounded-full hover:bg-gray-100 hover:bg-opacity-50">
-          <svg fill="none" viewBox="0 0 24 24" stroke="currentColor"
-            class="h-6 w-6 mx-0.5 mr-3 text-gray-400 flex-shrink-0">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-              d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4" />
-          </svg>
-          Documents
-        </a>
-      </nav>
-    </aside>
-    <div class="flex-grow bg-gray-100">
-      <header class="flex items-center justify-between px-6 py-5 max-w-6xl mx-auto mb-4">
-        <button class="block md:hidden p-2 text-gray-700 mr-2">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="h-6 w-6">
-            <path fill-rule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h6a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clip-rule="evenodd" />
-          </svg>
-        </button>
-        <div class="relative w-full max-w-4xl mr-6 sm:mr-8 md:mr-16 lg:mr-24">
-          <svg viewBox="0 0 20 20" fill="currentColor" class="absolute h-6 w-6 text-gray-400 mt-2 ml-3">
-            <path fill-rule="evenodd"
-              d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-              clip-rule="evenodd" />
-          </svg>
-          <input type="text" placeholder="Search for objects, contacts, documents etc."
-            class="pl-10 w-full pr-4 py-2 border border-gray-300 shadow-sm rounded-lg" />
-        </div>
-        <div class="flex flex-shrink-0">
-          <button class="flex items-center p-2 sm:mr-2">
-            Laura Heff
-            <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 ml-2">
-              <path fill-rule="evenodd"
-                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                clip-rule="evenodd" />
-            </svg>
-          </button>
-          <div class="h-10 w-10 hidden sm:block border border-gray-400 bg-gray-300 overflow-hidden rounded-full">
-            <img src="https://userstock.io/data/wp-content/uploads/2020/06/philipe-cavalcante-xe68QiMaDrQ-2-300x300.jpg"
-              alt="user avatar" class="object-cover">
-          </div>
-        </div>
-      </header>
-      <main class="flex flex-col space-y-10 px-6 py-5 max-w-6xl mx-auto">
-        <h1 class="text-3xl">
-          <span class="text-gray-500">Welcome back,</span>
-          <span class="font-semibold">Laura</span>
-        </h1>
-        <section class="p-6 sm:p-8 flex items-center bg-indigo-700 shadow-md rounded-lg">
-          <div class="mr-6">
-            <header class="text-xl text-indigo-50 mb-3">Link your bank account to your custom account</header>
-            <p class="sm:max-w-md text-indigo-300 leading-tight mb-5">Get a better overview of your rental income by
-              having us scan your account for you.</p>
-            <div class="flex flex-wrap">
-              <button class="py-2 px-5 text-indigo-700 font-semibold bg-white rounded-full  mb-3 mr-5">Link bank
-                account</button>
-              <button class="py-2 px-5 text-white font-semibold bg-indigo-900 rounded-full mb-3 mr-5">Later</button>
-            </div>
-          </div>
-          <div class="hidden sm:block mr-0 ml-auto md:mr-8">
-            <div
-              class="h-32 w-32 flex items-center justify-center text-3xl text-white font-semibold border-4 border-white rounded-full">
-              100%
-            </div>
-          </div>
-        </section>
-        <section>
-          <div class="flex justify-between items-center mb-6">
-            <header class="text-xl font-semibold">Your objects at a glance</header>
-            <a href="#" class="hidden sm:flex flex-shrink-0 items-center text-lg font-medium text-gray-500">
-              More about finances
-              <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 ml-1 mt-1">
-                <path fill-rule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd" />
-              </svg>
+
+        <ul class="navbar-nav align-self-stretch">
+
+          <li class="sidebar-header">
+            Pages
+          </li>
+          <li class="">
+            <a class="nav-link text-left active" role="button" aria-haspopup="true" aria-expanded="false">
+              <i class="flaticon-bar-chart-1"></i> Dashboard
             </a>
-            <a href="#" class="flex sm:hidden flex-shrink-0 items-center text-lg font-medium text-gray-500">
-              More
-              <svg viewBox="0 0 20 20" fill="currentColor" class="h-5 w-5 ml-1 mt-1">
-                <path fill-rule="evenodd"
-                  d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                  clip-rule="evenodd" />
-              </svg>
-            </a>
+          </li>
+
+        </ul>
+
+
+      </div>
+
+
+    </nav>
+    <!-- /#sidebar-wrapper -->
+
+
+
+
+
+
+
+
+
+
+    <!-- Page Content -->
+    <div id="page-content-wrapper">
+
+
+      <div id="content">
+
+        <div class="container-fluid p-0 px-lg-0 px-md-0">
+          <!-- Topbar -->
+          <nav class="navbar navbar-expand navbar-light my-navbar">
+
+            <!-- Sidebar Toggle (Topbar) -->
+            <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed"
+              data-toggle="offcanvas">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+
+            <!-- Topbar Search -->
+            <form class="d-none d-sm-inline-block form-inline navbar-search">
+              <div class="input-group">
+                <input type="text" class="form-control bg-light " placeholder="Search for..." aria-label="Search">
+                <div class="input-group-append">
+                  <button class="btn btn-primary" type="button">
+                    <i class="fas fa-search fa-sm"></i>
+                  </button>
+                </div>
+              </div>
+            </form>
+
+            <!-- Topbar Navbar -->
+            <ul class="navbar-nav ml-auto">
+
+              <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+              <li class="nav-item dropdown  d-sm-none">
+
+                <!-- Dropdown - Messages -->
+                <div class="dropdown-menu dropdown-menu-right p-3">
+                  <form class="form-inline mr-auto w-100 navbar-search">
+                    <div class="input-group">
+                      <input type="text" class="form-control bg-light border-0 small" placeholder="Search for...">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">
+                          <i class="fas fa-search fa-sm"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </li>
+
+
+              <!-- Nav Item - Messages -->
+              <li class="nav-item">
+              <li class="nav-item">
+                <a class="nav-link" href="#">Link</a>
+              </li>
+              </li>
+
+              <!-- Nav Item - User Information -->
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
+                  <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vishweb Design</span>
+                  <img class="img-profile rounded-circle" src="logo3.png">
+                </a>
+              </li>
+
+            </ul>
+
+          </nav>
+          <!-- End of Topbar -->
+
+          <!-- Begin Page Content -->
+          <div class="container-fluid px-lg-4">
+            <div class="row">
+              <div class="col-md-12 mt-lg-4 mt-4">
+                <!-- Page Heading -->
+                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                  <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title mb-4">Sales</h5>
+                        <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                        <div class="mb-1">
+                          <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
+                          <span class="text-muted">Since last week</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title mb-4">Sales</h5>
+                        <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                        <div class="mb-1">
+                          <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
+                          <span class="text-muted">Since last week</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title mb-4">Sales</h5>
+                        <h1 class="display-5 mt-1 mb-3">2.382</h1>
+                        <div class="mb-1">
+                          <span class="text-danger"> <i class="mdi mdi-arrow-bottom-right"></i> -3.65% </span>
+                          <span class="text-muted">Since last week</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+                  <div class="col-sm-3">
+                    <div class="card">
+                      <div class="card-body">
+                        <h5 class="card-title mb-4">Earnings</h5>
+                        <h1 class="display-5 mt-1 mb-3">$21.300</h1>
+                        <div class="mb-1">
+                          <span class="text-success"> <i class="mdi mdi-arrow-bottom-right"></i> 6.65% </span>
+                          <span class="text-muted">Since last week</span>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+
+                </div>
+              </div>
+
+
+
+              <!-- column -->
+              <div class="col-md-12 mt-4">
+                <div class="card">
+                  <div class="card-body">
+                    <!-- title -->
+                    <div class="d-md-flex align-items-center">
+                      <div>
+                        <h4 class="card-title">Top Selling Products</h4>
+                        <h5 class="card-subtitle">Overview of Top Selling Items</h5>
+                      </div>
+                      <div class="ml-auto">
+                        <div class="dl">
+                          <select class="custom-select">
+                            <option value="0" selected="">Monthly</option>
+                            <option value="1">Daily</option>
+                            <option value="2">Weekly</option>
+                            <option value="3">Yearly</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                    <!-- title -->
+                  </div>
+                  <div class="table-responsive">
+                    <table class="table v-middle">
+                      <thead>
+                        <tr class="bg-light">
+                          <th class="border-top-0">Products</th>
+                          <th class="border-top-0">License</th>
+                          <th class="border-top-0">Support Agent</th>
+                          <th class="border-top-0">Technology</th>
+                          <th class="border-top-0">Tickets</th>
+                          <th class="border-top-0">Sales</th>
+                          <th class="border-top-0">Earnings</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="m-r-10"><a class="btn btn-circle btn-info text-white">EA</a></div>
+                              <div class="">
+                                <h4 class="m-b-0 font-16">Elite Admin</h4>
+                              </div>
+                            </div>
+                          </td>
+                          <td>Single Use</td>
+                          <td>John Doe</td>
+                          <td>
+                            <label class="label label-danger">Angular</label>
+                          </td>
+                          <td>46</td>
+                          <td>356</td>
+                          <td>
+                            <h5 class="m-b-0">$2850.06</h5>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="m-r-10"><a class="btn btn-circle btn-info text-white">EA</a></div>
+                              <div class="">
+                                <h4 class="m-b-0 font-16">Elite Admin</h4>
+                              </div>
+                            </div>
+                          </td>
+                          <td>Single Use</td>
+                          <td>John Doe</td>
+                          <td>
+                            <label class="label label-danger">Angular</label>
+                          </td>
+                          <td>46</td>
+                          <td>356</td>
+                          <td>
+                            <h5 class="m-b-0">$2850.06</h5>
+                          </td>
+                        </tr>
+
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="m-r-10"><a class="btn btn-circle btn-orange text-white">MA</a></div>
+                              <div class="">
+                                <h4 class="m-b-0 font-16">Monster Admin</h4>
+                              </div>
+                            </div>
+                          </td>
+                          <td>Single Use</td>
+                          <td>Venessa Fern</td>
+                          <td>
+                            <label class="label label-info">Vue Js</label>
+                          </td>
+                          <td>46</td>
+                          <td>356</td>
+                          <td>
+                            <h5 class="m-b-0">$2850.06</h5>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="m-r-10"><a class="btn btn-circle btn-success text-white">MP</a></div>
+                              <div class="">
+                                <h4 class="m-b-0 font-16">Material Pro Admin</h4>
+                              </div>
+                            </div>
+                          </td>
+                          <td>Single Use</td>
+                          <td>John Doe</td>
+                          <td>
+                            <label class="label label-success">Bootstrap</label>
+                          </td>
+                          <td>46</td>
+                          <td>356</td>
+                          <td>
+                            <h5 class="m-b-0">$2850.06</h5>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>
+                            <div class="d-flex align-items-center">
+                              <div class="m-r-10"><a class="btn btn-circle btn-purple text-white">AA</a></div>
+                              <div class="">
+                                <h4 class="m-b-0 font-16">Ample Admin</h4>
+                              </div>
+                            </div>
+                          </td>
+                          <td>Single Use</td>
+                          <td>John Doe</td>
+                          <td>
+                            <label class="label label-purple">React</label>
+                          </td>
+                          <td>46</td>
+                          <td>356</td>
+                          <td>
+                            <h5 class="m-b-0">$2850.06</h5>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+
           </div>
-          <div class="h-64 bg-white border rounded-lg shadow-md py-4 px-6">
-            <div class="text-lg font-semibold">Rental income</div>
-          </div>
-        </section>
-      </main>
+          <!-- /.container-fluid -->
+
+        </div>
+
+
+
+
+
+
+
+
+
+
+      </div>
     </div>
+    <!-- /#page-content-wrapper -->
+
   </div>
+  <!-- /#wrapper -->
+
+  <!-- lien script jquery 5.3.1 -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+    crossorigin="anonymous"></script>
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+    integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous">
+  </script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous">
+  </script>
+
+
+  <script>
+    $('#bar').click(function () {
+      $(this).toggleClass('open');
+      $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
+
+    });
+  </script>
 </body>
 
 </html>
