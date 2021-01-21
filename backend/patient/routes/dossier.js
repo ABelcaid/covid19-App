@@ -12,6 +12,7 @@ router.route("/add").post((req, res) => {
   const nom = req.body.nom;
   const cin = req.body.cin;
   const email = req.body.email;
+  const telephone = req.body.telephone;
  
 
   const dossierPush = new Dossier({
@@ -19,6 +20,7 @@ router.route("/add").post((req, res) => {
     nom,
     cin,
     email,
+    telephone
   });
 
   dossierPush

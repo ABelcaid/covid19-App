@@ -27,7 +27,14 @@ const Dossier = new Schema(
       required: true,
       trim: true,
       minlenght: 10,
+    },
+    telephone: {
+      type: String,
+      required: true,
+      trim: true,
+      minlenght: 10,
     }
+    
   },
   {
     versionKey: false
