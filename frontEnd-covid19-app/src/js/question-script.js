@@ -1,7 +1,7 @@
 
    var urlString = window.location.search;
    var urlParam = new URLSearchParams(urlString);
-   var id = urlParam.get('idDossier');
+   const id = urlParam.get('idDossier');
    console.log(id)
 
 
@@ -36,7 +36,7 @@ addQuestionDossier.addEventListener('click', () => {
         q9 : q9,
         q10 : q10,
         q11 : q11,
-        q12 : q12,
+        q12 : q12
     }
     
     axios.post('http://localhost:8080/question/add', obj)
