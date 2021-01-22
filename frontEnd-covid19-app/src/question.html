@@ -1,17 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="X-UA-Compatible" content="ie=edge">
-<meta name="Description" content="Enter your description here"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
-<link rel="stylesheet" href="index.css">
-<title>Title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="Description" content="Enter your description here" />
+    <script src="https://kit.fontawesome.com/c2035ffa68.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/question-style.css">
+    <title>Title</title>
 </head>
+
 <body>
     <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
         <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
             <div class="simplebar-content" style="padding: 0px;">
                 <a class="sidebar-brand" href="index.html">
@@ -38,74 +45,266 @@
 
 
         </nav>
-        <nav class="navbar navbar-expand navbar-light my-navbar">
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
 
-            <!-- Sidebar Toggle (Topbar) -->
-            <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed"
-                data-toggle="offcanvas">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="navbar-nav ml-auto">
 
-                <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                <li class="nav-item dropdown  d-sm-none">
+            <div id="content">
 
-                    <!-- Dropdown - Messages -->
-                    <!-- <div class="dropdown-menu dropdown-menu-right p-3">
-                        <form class="form-inline mr-auto w-100 navbar-search">
-                            <div class="input-group">
-                                <input type="text" class="form-control bg-light border-0 small"
-                                    placeholder="Search for...">
-                                <div class="input-group-append">
-                                    <button class="btn btn-primary" type="button">
-                                        <i class="fas fa-search fa-sm"></i>
-                                    </button>
-                                </div>
+                <div class="container-fluid p-0 px-lg-0 px-md-0">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light my-navbar">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed"
+                            data-toggle="offcanvas">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <ul class="navbar-nav ml-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown  d-sm-none">
+
+                                <!-- Dropdown - Messages -->
+                                <!-- <div class="dropdown-menu dropdown-menu-right p-3">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                placeholder="Search for...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div> -->
+
+                            </li>
+
+
+                            <!-- Nav Item - Messages -->
+                            <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            </li>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vishweb Design</span>
+                                    <img class="img-profile rounded-circle" src="https://i.pinimg.com/736x/77/fb/da/77fbda1dd74e005e2b9f1e6bbde6b474.jpg">
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid">
+                        
+                        <form action="">
+
+                            <div class="wrap">
+                              <div class="row">
+                                <section data-quiz-item="">
+                                  <div class="question">Fiévre (Température mesurée >38°) </div>
+                                  <div class="choices">
+                        
+                                    <input name="q1" id="q1True" type="radio" value="oui">
+                                    <label for="q1True">Oui</label>
+                                    <input name="q1" id="q1False" type="radio" value="non">
+                                    <label for="q1False">Non</label>
+                        
+                                  </div>
+                                </section>
+                                <section data-quiz-item="">
+                                  <div class="question">Toux séche </div>
+                                  <div class="choices">
+                        
+                                    <input name="q2" id="q2True" type="radio" value="oui">
+                                    <label for="q2True">Oui</label>
+                                    <input name="q2" id="q2False" type="radio" value="non">
+                                    <label for="q2False">Non</label>
+                        
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="row">
+                                <section data-quiz-item="">
+                                  <div class="question">Difficultés a respirer
+                                  </div>
+                        
+                                  <div class="choices">
+                                    <input name="q3" id="q3True" type="radio" value="oui">
+                                    <label for="q3True">Oui</label>
+                                    <input name="q3" id="q3False" type="radio" value="non">
+                                    <label for="q3False">Non</label>
+                        
+                                  </div>
+                                </section>
+                                <section data-quiz-item="">
+                                  <div class="question">Maux de gorge </div>
+                                  <div class="choices">
+                        
+                                    <input name="q4" id="q4True" type="radio" value="oui">
+                                    <label for="q4True">Oui</label>
+                                    <input name="q4" id="q4False" type="radio" value="non">
+                                    <label for="q4False">Non</label>
+                        
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="row">
+                                <section data-quiz-item="">
+                                  <div class="question">Rhinite </div>
+                                  <div class="choices">
+                        
+                                    <input name="q5" id="q5True" type="radio" value="oui">
+                                    <label for="q5True">Oui</label>
+                                    <input name="q5" id="q5False" type="radio" value="non">
+                                    <label for="q5False">Non</label>
+                        
+                                  </div>
+                                </section>
+                                <section data-quiz-item="">
+                                  <div class="question">Douleur dans les muscles (courbatures) </div>
+                                  <div class="choices">
+                        
+                                    <input name="q6" id="q6True" type="radio" value="oui">
+                                    <label for="q6True">Oui</label>
+                                    <input name="q6" id="q6False" type="radio" value="non">
+                                    <label for="q6False">Non</label>
+                        
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="row">
+                                <section data-quiz-item="">
+                                  <div class="question">Fatigue importante </div>
+                                  <div class="choices">
+                        
+                                    <input name="q7" id="q7True" type="radio" value="oui">
+                                    <label for="q7True">Oui</label>
+                                    <input name="q7" id="q7False" type="radio" value="non">
+                                    <label for="q7False">Non</label>
+                        
+                                  </div>
+                                </section>
+                                <section data-quiz-item="">
+                                  <div class="question">Maux de téte </div>
+                                  <div class="choices">
+                        
+                                    <input name="q8" id="q8True" type="radio" value="oui">
+                                    <label for="q8True">Oui</label>
+                                    <input name="q8" id="q8False" type="radio" value="non">
+                                    <label for="q8False">Non</label>
+                        
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="row">
+                                <section data-quiz-item="">
+                                  <div class="question">Diarrhéee </div>
+                                  <div class="choices">
+                        
+                                    <input name="q9" id="q9True" type="radio" value="oui">
+                                    <label for="q9True">Oui</label>
+                                    <input name="q9" id="q9False" type="radio" value="non">
+                                    <label for="q9False">Non</label>
+                        
+                                  </div>
+                                </section>
+                                <section data-quiz-item="">
+                                  <div class="question">Nuasées et/ou Vomissements </div>
+                                  <div class="choices">
+                        
+                                    <input name="q10" id="q10True" type="radio" value="oui">
+                                    <label for="q10True">Oui</label>
+                                    <input name="q10" id="q10False" type="radio" value="non">
+                                    <label for="q10False">Non</label>
+                        
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="row last">
+                                <section data-quiz-item="">
+                                  <div class="question">Anosmie (perte de l'odorat)
+                                  </div>
+                                  <div class="choices">
+                        
+                                    <input name="q11" id="q11True" type="radio" value="oui">
+                                    <label for="q11True">Oui</label>
+                                    <input name="q11" id="q11False" type="radio" value="non">
+                                    <label for="q11False">Non</label>
+                        
+                                  </div>
+                                </section>
+                                <section data-quiz-item="">
+                                  <div class="question">Agueusie (perte du gout) </div>
+                                  <div class="choices">
+                        
+                                    <input name="q12" id="q12True" type="radio" value="oui">
+                                    <label for="q12True">Oui</label>
+                                    <input name="q12" id="q12False" type="radio" value="non">
+                                    <label for="q12False">Non</label>
+                        
+                                  </div>
+                                </section>
+                              </div>
+                              <div class="submit">
+                                <button type="submit" id="q-submit" class="btn btn-primary">Submit Answers</button>
+                              </div>
                             </div>
-                        </form>
-                    </div> -->
-
-                </li>
-
-
-                <!-- Nav Item - Messages -->
-                <li class="nav-item">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
-                </li>
-                </li>
-
-                <!-- Nav Item - User Information -->
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                        data-toggle="dropdown">
-                        <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vishweb Design</span>
-                        <img class="img-profile rounded-circle" src="logo3.png">
-                    </a>
-                </li>
-
-            </ul>
-
-        </nav>
-    </div>
+                          </form>
+                        
+                        
     
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
-<script>
-    var urlString = window.location.search;
-    var urlParam = new URLSearchParams(urlString);
-    var id = urlParam.get('idDossier');
-    console.log(id)
-</script>
-<script>
-    $('#bar').click(function () {
-        $(this).toggleClass('open');
-        $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
+                    </div>
+                    <!-- /.container-fluid -->
 
-    });
-</script>
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+
+    
+
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
+
+    <script src="js/question-script.js"></script>
+
+    <script>
+     
+    </script>
+    <script>
+        $('#bar').click(function () {
+            $(this).toggleClass('open');
+            $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
+
+        });
+    </script>
 </body>
+
 </html>
