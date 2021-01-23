@@ -1,4 +1,11 @@
-axios.get('http://localhost:8080/dossier/')
+var urlString = window.location.search;
+var urlParam = new URLSearchParams(urlString);
+const id = urlParam.get('idDossier');
+console.log(id)
+
+
+
+axios.get(`http://localhost:8080/dossier/${id}`)
 .then(function (response) {
     var tbody = document.getElementById("tbody");
     var child = '';
@@ -25,30 +32,3 @@ axios.get('http://localhost:8080/dossier/')
 .catch(function (err) {
     console.log(err);
 });
-
-var addDossier = document.getElementById("addDossier");
-addDossier.addEventListener('click', () => {
-    console.log("clicked");
-    var prenom = document.getElementById('prenom').value;
-    var nom = document.getElementById('nom').value;
-    var cin = document.getElementById('cin').value;
-    var email = document.getElementById('email').value;
-    var telephone = document.getElementById('telephone').value;
-  
-    var obj =     {
-        prenom : prenom,
-        nom : nom,
-        cin : cin,
-        email : email,
-        telephone : telephone
-    }
-    
-    axios.post('http://localhost:8080/dossier/add', obj)
-    .then(function (response){
-        document.getElementById("closeDossier").click();
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
-    location.reload();
-})

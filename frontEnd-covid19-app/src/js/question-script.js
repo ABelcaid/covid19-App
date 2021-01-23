@@ -1,4 +1,3 @@
-
    var urlString = window.location.search;
    var urlParam = new URLSearchParams(urlString);
    const id = urlParam.get('idDossier');
@@ -8,7 +7,7 @@
 var addQuestionDossier = document.getElementById("q-submit");
 addQuestionDossier.addEventListener('click', () => {
     console.log("clicked");
-    
+
     var q1 = document.querySelector('input[name="q1"]:checked').value;
     var q2 = document.querySelector('input[name="q2"]:checked').value;
     var q3 = document.querySelector('input[name="q3"]:checked').value;
@@ -23,29 +22,63 @@ addQuestionDossier.addEventListener('click', () => {
     var q12 = document.querySelector('input[name="q12"]:checked').value;
 
 
-    var obj =     {
-        dossierId : id,
-        q1 : q1,
-        q2 : q2,
-        q3 : q3,
-        q4 : q4,
-        q5 : q5,
-        q6 : q6,
-        q7 : q7,
-        q8 : q8,
-        q9 : q9,
-        q10 : q10,
-        q11 : q11,
-        q12 : q12
-    }
-    
-    axios.post('http://localhost:8080/question/add', obj)
-    .then(function (response){
-       console.log("Q added");;
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
-    
-    
+    // var obj =     {
+    //     dossierId : id,
+    //     q1 : q1,
+    //     q2 : q2,
+    //     q3 : q3,
+    //     q4 : q4,
+    //     q5 : q5,
+    //     q6 : q6,
+    //     q7 : q7,
+    //     q8 : q8,
+    //     q9 : q9,
+    //     q10 : q10,
+    //     q11 : q11,
+    //     q12 : q12
+    // }
+
+    // axios.post('http://localhost:8080/question/add', obj)
+    // .then(function (response){
+    //    console.log("Q added");;
+    // })
+    // .catch(function (err) {
+    //     console.log(err);
+    // });
+
+  var dateNow = new Date();
+
+    axios({
+        method: 'post',
+        url: 'http://localhost:8080/question/add',
+        data: {
+            dossierId : id,
+            q1 : q1,
+            q2 : q2,
+            q3 : q3,
+            q4 : q4,
+            q5 : q5,
+            q6 : q6,
+            q7 : q7,
+            q8 : q8,
+            q9 : q9,
+            q10 : q10,
+            q11 : q11,
+            q12 : q12
+
+        }
+      });
+      axios({
+        method: 'post',
+        url: 'http://localhost:8080/fiche/add',
+        data: {
+            idPatient : id,
+            dateTest : dateNow,
+            
+           
+
+        }
+      });
 })
+
+
