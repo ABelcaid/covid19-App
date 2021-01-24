@@ -11,6 +11,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="index.css">
     <title>Title</title>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+
+	<script type="text/javascript">
+		(function () {
+			emailjs.init("user_8Pq8rfBc4JS7xWqzhMw4G");
+		})();
+    </script>
+    
+
 </head>
 
 <body>
@@ -97,7 +107,8 @@
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vishweb Design</span>
-                                    <img class="img-profile rounded-circle" src="https://i.pinimg.com/736x/77/fb/da/77fbda1dd74e005e2b9f1e6bbde6b474.jpg">
+                                    <img class="img-profile rounded-circle"
+                                        src="https://i.pinimg.com/736x/77/fb/da/77fbda1dd74e005e2b9f1e6bbde6b474.jpg">
                                 </a>
                             </li>
 
@@ -108,37 +119,78 @@
 
                     <!-- Begin Page Content -->
                     <div class="container-fluid">
-                        
-                  <h1>ggggggggggggggggggg</h1>
 
-                  <table class="table table-borderless">
-                    <tbody>
-                        <tr>
-                            <td>Prenom : </td>
-                            <td>Thornton</td>
-                          </tr>
-                      <tr>
-                        <td>Nom : </td>
-                        <td>Otto</td>
-                      </tr>
-                   
-                      <tr>
-                        <td>CIN : </td>
-                        <td>Thornton</td>
-                      </tr>
-                      <tr>
-                        <td>Email : </td>
-                        <td>Thornton</td>
-                      </tr>
-                      <tr>
-                        <td>Telephone : </td>
-                        <td>Thornton</td>
-                      </tr>
-                    </tbody>
-                  </table>
+                        <div class="print-div">
+                            <h3>Inforation general </h3>
+
+                        <table class="table table-borderless">
+                            <tbody id="personal-info">
+
+                            </tbody>
+                        </table>
+
+                        <h3>Resulut du Question </h3>
+
+                        <table class="table table-borderless">
+                            <tbody id="question-result">
+
+                            </tbody>
+                        </table>
+
+                        <h3>Resulut Final </h3>
+
+                        <table class="table table-borderless">
+                            <tbody id="final-result">
+
+                            </tbody>
+                        </table>
+
+                        </div>
                         
+                        <!-- -------------------------modification test result -------------------------------- -->
+
+                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+                            data-whatever="@mdo">Edit Reslut </button>
+                     
+                            <button type="button" id="sendMail" class="btn btn-primary" 
+                            >Send Mail</button>
                         
-    
+                            <button type="button" class="btn btn-primary"  onclick="window.print()">Print 
+                            </button>
+
+
+                        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                            aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form>
+                                            <div class="form-group">
+                                                <label for="recipient-name" class="col-form-label">Recipient:</label>
+                                                <select name="final-test-result" id="final-test-result" required>
+                                                    <option value="Negative">Negative</option>
+                                                    <option value="Positive">Positive</option>
+                                                   
+                                                  </select>
+                                            </div>
+
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" id="closeModal" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" id="submit-test-result"  class="btn btn-primary">Modifier</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                     <!-- /.container-fluid -->
 
@@ -155,7 +207,7 @@
 
             </div>
 
-    
+
 
         </div>
         <!-- /#page-content-wrapper -->
@@ -166,11 +218,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.3/js/bootstrap.min.js"></script>
 
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
 
+	<script type="text/javascript">
+		(function () {
+			emailjs.init("user_8Pq8rfBc4JS7xWqzhMw4G");
+		})();
+    </script>
     <script src="js/result-script.js"></script>
 
     <script>
-     
+
     </script>
     <script>
         $('#bar').click(function () {
@@ -179,6 +237,22 @@
 
         });
     </script>
+
+    <style>
+        .table td {
+            border-top: 0;
+
+        }
+
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            .print-div , .print-div * {
+                visibility: visible;
+            }
+        }
+    </style>
 </body>
 
 </html>
