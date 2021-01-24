@@ -17,6 +17,7 @@ axios.get('http://localhost:8080/dossier/')
         child += "<td>"+element.email +"</td>";
         child += "<td>"+element.telephone +"</td>";
         child += "<td><a href='question.html?idDossier="+element._id+"'>Aller Au questionnaire</a></td>";
+        child += "<td><a href='result.html?idDossier="+element._id+"'>Resultat du test </a></td>";
         child += "</tr>";
     });
     tbody.innerHTML = child;

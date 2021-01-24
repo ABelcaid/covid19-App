@@ -47,12 +47,18 @@ router.route("/add").post((req, res) => {
 });
 
 
-router.route("/:id").get((req, res) => {
-  Question.findById(req.params.id)
+// router.route("/:id").get((req, res) => {
+//   Question.findById(req.params.id)
+//     .then((question) => res.json(question))
+//     .catch((err) => res.status(400).json("Error :" + err));
+// });
+
+router.route("/:dossierId").get((req, res) => {
+  // res.send("tagId is set to " + req.params.dossierId);
+  Question.findOne({dossierId: `${req.params.dossierId}`})
     .then((question) => res.json(question))
     .catch((err) => res.status(400).json("Error :" + err));
 });
-
 
 
 module.exports = router;
