@@ -150,7 +150,7 @@ axios.get(`http://localhost:8080/dossier/${id}`)
 var sendMail = document.getElementById("sendMail");
 sendMail.addEventListener('click', () => {
 
-// console.log("hhhhhhhhhhhhhhhhhhhhhhhi");
+
 
 axios.get(`http://localhost:8080/dossier/${id}`)
     .then(function (response) {
@@ -171,28 +171,6 @@ axios.get(`http://localhost:8080/dossier/${id}`)
         });
 
 
-        // var child = `<tr>
-        // <td>Prenom : </td>
-        // <td>${response.data.prenom}</td>
-        // </tr>
-        // <tr>
-        // <td>Nom : </td>
-        // <td>${response.data.nom}</td>
-        // </tr>
-        // <tr>
-        // <td>CIN : </td>
-        // <td>${response.data.cin}</td>
-        // </tr>
-        // <tr>
-        // <td>Email : </td>
-        // <td>${response.data.email}</td>
-        // </tr>
-        // <tr>
-        // <td>Telephone : </td>
-        // <td>${response.data.telephone}</td>
-        // </tr>`;
-
-        // tbody.innerHTML = child;
     })
     .catch(function (err) {
         console.log(err);
