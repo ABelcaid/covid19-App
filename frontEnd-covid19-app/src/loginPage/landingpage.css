@@ -1,0 +1,31 @@
+.flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: DodgerBlue;
+  }
+  .center{
+      margin-top: 5%;
+  }
+  .content{
+      position: relative;
+  
+  } 
+  .logForm{
+     width: 80%;
+     height: 80%;
+    justify-content: center!important; 
+  }
+  .button{
+    background-image:radial-gradient(#7BE495,#329D9C)!important;
+    margin-top: 8%;
+  }
+  h5{
+      width: 70%;
+  }
+  .logo{
+      position:absolute;
+      top:0px;
+      left: 80px;
+      width: 8%!important;
+      padding: 0%;
+  }
