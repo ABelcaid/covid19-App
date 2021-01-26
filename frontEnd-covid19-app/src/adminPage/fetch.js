@@ -155,8 +155,10 @@ const LogIn = () => {
        localStorage.setItem('doctorName' , responseData[i].fullname )
          break;
         }  else {
-        document.getElementById("error").innerHTML = "Email ou mot de passe incorrect!";
-        document.getElementById("error").style = "color:#FF0D00; background-color : #F0B8B0;border-style: solid; border-width:1px; border-radius: 4%; border-color: red;margin-top: 10px;padding-left: 10px"
+   setTimeout(()=>{
+    document.getElementById("error").innerHTML = "Email ou mot de passe incorrect!";
+    document.getElementById("error").style = "color:#FF0D00; background-color : #F0B8B0;border-style: solid; border-width:1px; border-radius: 4%; border-color: red;margin-top: 10px;padding-left: 10px"
+   },300)
         }
       }
 });
