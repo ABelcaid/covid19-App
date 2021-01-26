@@ -2,6 +2,8 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require('body-parser');
 
+const logger = require('./config/logger')
+ 
 require("dotenv").config();
 
 
@@ -32,7 +34,7 @@ mongoose.connect(dbConfig.url, {
 }).then(() => {
   console.log("Successfully connected to the database");    
 }).catch(err => {
-  console.log('Could not connect to the database. Exiting now...', err);
+  logger.error('Could not connect to the database. Exiting now...', err);
   process.exit();
 });
 
