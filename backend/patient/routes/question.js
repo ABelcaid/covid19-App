@@ -1,10 +1,13 @@
 const router = require("express").Router();
 let Question = require("../models/question.model");
+const logger = require('../config/logger')
+
 
 router.route("/").get((req, res) => {
   Question.find()
     .then((question) => res.json(question))
-    .catch((err) => res.status(400).json("Error :" + err));
+    .catch((err) => 
+    res.status(400).json("Error :" + err));
 });
 
 
@@ -57,7 +60,8 @@ router.route("/:dossierId").get((req, res) => {
   // res.send("tagId is set to " + req.params.dossierId);
   Question.findOne({dossierId: `${req.params.dossierId}`})
     .then((question) => res.json(question))
-    .catch((err) => res.status(400).json("Error :" + err));
+    .catch((err) =>
+     res.status(400).json("Error :" + err));
 });
 
 

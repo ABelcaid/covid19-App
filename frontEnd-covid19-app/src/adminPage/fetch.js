@@ -151,7 +151,8 @@ const LogIn = () => {
       console.log(responseData[i].email)
       console.log(responseData[i].Password)
        if (email == responseData[i].email && password == responseData[i].Password){
-       window.location.replace("abederahim URL");
+       window.location.replace("../index.html");
+       localStorage.setItem('doctorName' , responseData[i].fullname )
          break;
         }  else {
         document.getElementById("error").innerHTML = "Email ou mot de passe incorrect!";
