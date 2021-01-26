@@ -146,7 +146,7 @@ const LogIn = () => {
     console.log("here we are")
     window.location.replace("../adminPage/adminPage.html");
 } else 
-  sendHttpRequest('GET', "https://6005eb7d3698a80017de1195.mockapi.io/doctors").then(responseData => {
+sendHttpRequest('GET', "https://6005eb7d3698a80017de1195.mockapi.io/doctors").then(responseData => {
     for (let i = 0; i < responseData.length; i++) {
       console.log(responseData[i].email)
       console.log(responseData[i].Password)
