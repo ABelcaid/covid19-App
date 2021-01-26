@@ -1,5 +1,7 @@
 const router = require("express").Router();
 let FichePatient = require("../models/fichePatient.model");
+const logger = require('../config/logger')
+
 
 router.route("/").get((req, res) => {
   FichePatient.find()
@@ -20,7 +22,7 @@ router.route("/update/:id").put((req, res) => {
   // });
   FichePatient.updateOne({idPatient: req.params.id}, {rsTest : rsTest})
   .then(() => res.status(201).json("fiche Patient successfully update"))
-  .catch((err) => res.status(400).json("Error :" + err));
+  .catch((err) =>  res.status(400).json("Error :" + err));
 })
 
 
@@ -38,7 +40,7 @@ router.route("/add").post((req, res) => {
   fichePatientPush
     .save()
     .then(() => res.json("fiche Patient successfully added"))
-    .catch((err) => res.status(400).json("Error :" + err));
+    .catch((err) =>  res.status(400).json("Error :" + err));
 });
 
 // router.route("/:id").get((req, res) => {
