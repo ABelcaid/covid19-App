@@ -97,7 +97,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown">
                         <span class="mr-2 d-none d-lg-inline text-gray-600 small">Se déconnecter</span>
-                        <img class="img-profile rounded-circle" alt="logo" src="logo3.png">
+                        <img class="img-profile rounded-circle" alt="logo" onclick="logout()" src="logo3.png">
                     </a>
                 </li>
 
@@ -181,32 +181,36 @@
                     <!-- form -->
                     <div class="form-group">
                         <label for="recipient-name" class="col-form-label">name</label>
-                        <input type="text" class="form-control" name="name" id="name">
+                        <input type="text" class="form-control" name="name" id="name" onblur="validationName()">
+                        <p id="nameError"></p>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">Email:</label>
-                        <input type="text" class="form-control" name="email" id="email">
+                        <input type="text" class="form-control" name="email" id="email" onblur="validationEmail ()">
+                        <p id="emailError"></p>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">cin:</label>
-                        <input type="text" class="form-control" name="cin" id="cin">
+                        <input type="text" class="form-control" name="cin" id="cin" onblur="validationCin ()">
+                        <p id="cinError"></p>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">phone:</label>
-                        <input type="text" class="form-control" name="phone" id="phone">
+                        <input type="text" class="form-control" name="phone" id="phone" onblur="validationPhone ()">
+                        <p id="phoneError"></p>
                     </div>
                     <div class="form-group">
                         <label for="message-text" class="col-form-label">password:</label>
-                        <input type="text" class="form-control" name="password" id="password">
+                        <input type="text" class="form-control" name="password" id="password" onblur="validationPassword ()">
+                        <p id="passwordError"></p>
                     </div>
                     <div>
-                        <input type="button" class="btn btn-secondary" value="click" onclick="logSubmit()">
+                        <input type="button" class="btn btn-secondary" id="send" value="click" onclick="logSubmit()" disabled>
                     </div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-
                 </div>
             </div>
         </div>
@@ -279,13 +283,7 @@
         </script>
 
 
-    <script>
-        $('#bar').click(function () {
-            $(this).toggleClass('open');
-            $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
 
-        });
-    </script>
 </body>
 
 </html>

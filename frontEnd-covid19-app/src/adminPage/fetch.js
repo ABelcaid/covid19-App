@@ -16,6 +16,110 @@ const sendHttpRequest = (method, url, data) => {
     return response.json();
   });
 };
+//modal validation 
+let validname = false,
+  validemail = false,
+  validcin = false,
+  validphone = false,
+  validpassword = false;
+
+function buttonEnable() {
+  if (validname && validemail && validcin && validphone && validpassword) {
+    console.log("ALL VALID  ");
+    document.getElementById("send").disabled = false;
+    document.getElementById("send").style = "background-color:green;"
+  } else {
+    document.getElementById("send").disabled = true;
+    document.getElementById("send").style = "background-color:gray;"
+  }
+}
+
+function showError(id, err) {
+  document.getElementById(id).innerHTML = err;
+  document.getElementById(id).style = "color:#FF0D00; background-color : #F0B8B0;border-style: solid; border-width:1px; border-radius: 4%; border-color: red;margin-top: 10px;padding-left: 10px"
+}
+
+function validationEmail() {
+  var email = document.getElementById('email').value
+  if (email == "") {
+    showError("emailError", "Email input is vide !");
+    validemail = false;
+  } else if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
+    document.getElementById("emailError").style = "display : none";
+    validemail = true;
+  } else {
+    showError("emailError", "Email not valid !")
+    validemail = false;
+  }
+  buttonEnable()
+}
+
+function validationName() {
+  var name = document.getElementById('name').value
+
+  if (name == "") {
+    showError("nameError", "name input is vide !");
+    validname = false;
+  } else if (name.match(/[a-z]{3,25}/g)) {
+    document.getElementById("nameError").style = "display : none";
+    validname = true;
+  } else {
+    showError("nameError", "name must be only chars and more then 3 and les then 25");
+    validname = false;
+  }
+  buttonEnable()
+}
+
+function validationCin() {
+  var cin = document.getElementById('cin').value
+
+  if (cin == "") {
+    showError("cinError", "cin input is vide !");
+    validcin = false;
+  } else if (cin.match(/[A-Z]{2}\d{4,7}/g)) {
+    document.getElementById("cinError").style = "display : none";
+    validcin = true;
+  } else {
+    showError("cinError", "Cin must be valid ");
+    validcin = false;
+    //console.log("EXEMPLE HH23456")
+  }
+  buttonEnable()
+}
+
+function validationPhone() {
+  var phone = document.getElementById('phone').value
+  if (phone == "") {
+    showError("phoneError", "phone input is vide !");
+    validphone = false;
+  } else if (phone.match(/^[+][0-9]*$/g)) {
+    document.getElementById("phoneError").style = "display : none";
+    validphone = true;
+  } else {
+    showError("phoneError", "phone number must be valid ");
+    validphone = false;
+  }
+  buttonEnable()
+}
+
+function validationPassword() {
+  var password = document.getElementById('password').value;
+  validpassword = false;
+  if (password == "") {
+    showError("passwordError", "password input is vide !")
+  } else if (password.match(/^.{8,}$/g)) {
+    document.getElementById("passwordError").style = "display : none";
+    validpassword = true
+  } else {
+    showError("passwordError", "password must be more than 8 chars ")
+    console.log("password not valid");
+    validpassword = false;
+  }
+  buttonEnable()
+}
+
+
+
 const getData = () => {
   sendHttpRequest('GET', "https://6005eb7d3698a80017de1195.mockapi.io/doctors").then(responseData => {
     console.log(responseData);
@@ -99,6 +203,7 @@ const updatee = (id) => {
     document.getElementById('idup').value = responseData.id
   });
 };
+
 function logupdate() {
   var name = document.getElementById('nameup').value
   var email = document.getElementById('emailup').value
@@ -119,6 +224,7 @@ function logupdate() {
       location.reload();
     })
 }
+
 function logSubmit() {
 
   var name = document.getElementById('name').value
@@ -139,27 +245,31 @@ function logSubmit() {
       location.reload();
     })
 }
-const LogIn = () => { 
-   let email = document.getElementById('Email').value
-   let password = document.getElementById('Password').value
-   if (email == "admin@admin.com" && password == "admin") {
+const LogIn = () => {
+  let email = document.getElementById('Email').value
+  let password = document.getElementById('Password').value
+  if (email == "admin@admin.com" && password == "admin") {
     console.log("here we are")
     window.location.replace("../adminPage/adminPage.html");
-} else 
-sendHttpRequest('GET', "https://6005eb7d3698a80017de1195.mockapi.io/doctors").then(responseData => {
-    for (let i = 0; i < responseData.length; i++) {
-      console.log(responseData[i].email)
-      console.log(responseData[i].Password)
-       if (email == responseData[i].email && password == responseData[i].Password){
-       window.location.replace("../index.html");
-       localStorage.setItem('doctorName' , responseData[i].fullname )
-         break;
-        }  else {
-   setTimeout(()=>{
-    document.getElementById("error").innerHTML = "Email ou mot de passe incorrect!";
-    document.getElementById("error").style = "color:#FF0D00; background-color : #F0B8B0;border-style: solid; border-width:1px; border-radius: 4%; border-color: red;margin-top: 10px;padding-left: 10px"
-   },300)
+  } else
+    sendHttpRequest('GET', "https://6005eb7d3698a80017de1195.mockapi.io/doctors").then(responseData => {
+      for (let i = 0; i < responseData.length; i++) {
+        console.log(responseData[i].email)
+        console.log(responseData[i].Password)
+        if (email == responseData[i].email && password == responseData[i].Password) {
+          window.location.replace("../index.html");
+          localStorage.setItem('doctorName', responseData[i].fullname)
+          break;
+        } else {
+          setTimeout(() => {
+            document.getElementById("error").innerHTML = "Email ou mot de passe incorrect!";
+            document.getElementById("error").style = "color:#FF0D00; background-color : #F0B8B0;border-style: solid; border-width:1px; border-radius: 4%; border-color: red;margin-top: 10px;padding-left: 10px"
+          }, 300)
         }
       }
-});
+    });
+}
+
+function logout() {
+  window.location.replace("../loginPage/loginpage.html");
 }
