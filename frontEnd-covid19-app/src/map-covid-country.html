@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Hello World!</title>
+    <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- lien font familly -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Roboto:wght@300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <!--fontawesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+        integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- ======= link mapbox ===========  -->
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v2.0.1/mapbox-gl.css' rel='stylesheet' />
+    <!-- ============ link file css =============== -->
+    <link rel="stylesheet" href="index.css">
+
+
+</head>
+
+<body>
+    <div class="loadingio-spinner-spinner-gqn3h2micbc">
+        <div class="ldio-g6vtkwra4jm">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
+            <div class="simplebar-content" style="padding: 0px;">
+                <a class="sidebar-brand" href="index.html">
+                    <span class="align-middle">Vishweb Design</span>
+                </a>
+
+                <ul class="navbar-nav align-self-stretch">
+
+                    <li class="">
+                        <a class="nav-link text-left active" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="flaticon-bar-chart-1"></i> Dashboard
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="dossierPatient.html" class="nav-link text-left" role="button" aria-haspopup="true"
+                            aria-expanded="false">
+                            <i class="flaticon-bar-chart-1"></i> Dossier Patient
+                        </a>
+                    </li>
+                    <li class="has-sub">
+                        <a class="nav-link collapsed text-left" href="#collapseExample2" role="button"
+                            data-toggle="collapse">
+                            <i class="flaticon-user"></i> Board Covid 19
+                        </a>
+                        <div class="collapse menu mega-dropdown" id="collapseExample2">
+                            <div class="dropmenu" aria-labelledby="navbarDropdown">
+                                <div class="container-fluid ">
+                                    <div class="row">
+                                        <div class="col-lg-12 px-2">
+                                            <div class="submenu-box">
+                                                <ul class="list-unstyled m-0">
+                                                    <li><a href="covid-summury.html">Summury</a></li>
+                                                    <li><a href="covid-country.html">Country</a></li>
+                                                    <li><a href="map-covid-country.html">Map Covid</a></li>
+                                                    <li><a href="covid-date.html">Covid With Date</a></li>
+                                                </ul>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+
+
+            </div>
+
+
+        </nav>
+        <!-- /#sidebar-wrapper -->
+
+
+
+
+
+
+
+
+
+
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+
+
+            <div id="content">
+
+                <div class="container-fluid p-0 px-lg-0 px-md-0">
+                    <!-- Topbar -->
+                    <nav class="navbar navbar-expand navbar-light my-navbar">
+
+                        <!-- Sidebar Toggle (Topbar) -->
+                        <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed"
+                            data-toggle="offcanvas">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+
+
+                        <!-- Topbar Search -->
+                        <form class="d-none d-sm-inline-block form-inline navbar-search">
+                            <div class="input-group">
+                                <input type="text" class="form-control bg-light " placeholder="Search for..."
+                                    aria-label="Search">
+                                <div class="input-group-append">
+                                    <button class="btn btn-primary" type="button">
+                                        <i class="fas fa-search fa-sm"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+
+                        <!-- Topbar Navbar -->
+                        <ul class="navbar-nav me-auto">
+
+                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
+                            <li class="nav-item dropdown  d-sm-none">
+
+                                <!-- Dropdown - Messages -->
+                                <div class="dropdown-menu dropdown-menu-right p-3">
+                                    <form class="form-inline mr-auto w-100 navbar-search">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control bg-light border-0 small"
+                                                placeholder="Search for...">
+                                            <div class="input-group-append">
+                                                <button class="btn btn-primary" type="button">
+                                                    <i class="fas fa-search fa-sm"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </li>
+
+
+                            <!-- Nav Item - Messages -->
+                            <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Link</a>
+                            </li>
+                            </li>
+
+                            <!-- Nav Item - User Information -->
+                            <li class="nav-item dropdown" style="float: right;">
+                                <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
+                                    data-toggle="dropdown">
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vishweb Design</span>
+                                    <img class="img-profile rounded-circle" src="logo3.png">
+                                </a>
+                            </li>
+
+                        </ul>
+
+                    </nav>
+                    <!-- End of Topbar -->
+
+                    <!-- Begin Page Content -->
+                    <div class="container-fluid px-lg-4">
+                        <div class="row">
+                            <div class="col-md-12 mt-lg-4 mt-4">
+                                <!-- Page Heading -->
+                                <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
+
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="row">
+                                    <div class="col-sm-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title mb-4">Deaths</h5>
+                                                <h1 class="display-5 mt-1 mb-3" id="para1"></h1>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title mb-4">Confirmed</h5>
+                                                <h1 class="display-5 mt-1 mb-3" id="para2"></h1>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <div class="card">
+                                            <div class="card-body">
+                                                <h5 class="card-title mb-4">Recovered</h5>
+                                                <h1 class="display-5 mt-1 mb-3" id="para3"></h1>
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+
+
+
+                            <!-- column -->
+                            <div class="col-md-12 mt-4">
+                                <div class="card">
+                                    <div class="card-body">
+                                        <!-- title -->
+                                        <form>
+                                            <div class="row justify-content-between">
+                                                <div class="col-12 col-md-3">
+                                                    <label for="selectCountry">Select Your Country</label>
+                                                    <select class="custom-select" id="selectCountry" required></select>
+                                                </div>
+                                             
+                                                <div class="col-12 col-md-3 d-flex align-items-end">
+                                                    <button class="btn btn-primary btn-block" type="button" id="submit"
+                                                        style="height: 45px;">Search Country</button>
+                                                </div>
+
+                                            </div>
+                                        </form>
+                                        <!-- title -->
+                                    </div>
+                                    <div class="table-responsive">
+                                        <div class="col-12 mapp px-0" id="mapp"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+                    </div>
+                    <!-- /.container-fluid -->
+
+                </div>
+
+
+
+
+
+
+
+
+
+
+            </div>
+        </div>
+        <!-- /#page-content-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+    
+    <!-- lien script jquery 5.3.1 -->
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+
+    <!-- Optional JavaScript -->
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
+    <!-- ---------- Lien cdn script Axios------------- -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
+
+    <script>
+          // ============== Script Load Page ======================
+          window.addEventListener("load", function () {
+            const loader = document.querySelector(".loadingio-spinner-spinner-gqn3h2micbc");
+            loader.className += " hidden"; // class "loader hidden"
+        });
+
+        // ============= Script Open side bar menu =====================
+        $('#bar').click(function () {
+            $(this).toggleClass('open');
+            $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
+
+        });
+
+        // ==================== Script GET & POST data with Select input ==================
+        // Make a request for a user with a given ID
+        axios.get('https://api.covid19api.com/summary')
+            .then(function (response) {
+
+                response.data.Countries.forEach((country) => {
+
+                    document.getElementById('selectCountry').innerHTML +=
+                        `<option value="${country.Country}">${country.Country}</option>`
+                });
+
+            })
+            .catch(function (error) {
+                // handle error
+                console.log(error);
+            })
+            .then(function () {
+                // always executed
+            });
+
+        //   -----------------get country -------------------
+
+        var find = document.getElementById("submit");
+        find.addEventListener('click', () => {
+
+            let country = document.getElementById('selectCountry').value;
+
+
+            axios.get(`https://api.covid19api.com/dayone/country/${country}`)
+                .then(function (response) {
+
+                    let lat = response.data[1].Lat;
+                    let lon = response.data[1].Lon
+
+                    document.getElementById('mapp').innerHTML =
+                        `<iframe  src="http://maps.google.com/maps?q=${lat},${lon}&z=7&output=embed" style="width:100%;height:578px;"></iframe>`
+                    console.log(lon);
+                    console.log(lat);
+                    document.getElementById('para1').innerHTML = response.data[1].Deaths;
+                    document.getElementById('para2').innerHTML = response.data[1].Confirmed;
+                    document.getElementById('para3').innerHTML = response.data[1].Recovered;
+
+                })
+                .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                })
+                .then(function () {
+                    // always executed
+                });
+
+
+        })
+    </script>
+
+
+</body>
+
+</html>
