@@ -25,7 +25,7 @@ let validname = false,
 
 function buttonEnable() {
   if (validname && validemail && validcin && validphone && validpassword) {
-    console.log("ALL VALID  ");
+    console.log("ALL VALID ");
     document.getElementById("send").disabled = false;
     document.getElementById("send").style = "background-color:green;"
   } else {
@@ -42,13 +42,13 @@ function showError(id, err) {
 function validationEmail() {
   var email = document.getElementById('email').value
   if (email == "") {
-    showError("emailError", "Email input is vide !");
+    showError("emailError", "L'entrée de l'e-mail est vide !");
     validemail = false;
   } else if (email.match(/^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g)) {
     document.getElementById("emailError").style = "display : none";
     validemail = true;
   } else {
-    showError("emailError", "Email not valid !")
+    showError("emailError", "Email non valide !")
     validemail = false;
   }
   buttonEnable()
@@ -58,13 +58,13 @@ function validationName() {
   var name = document.getElementById('name').value
 
   if (name == "") {
-    showError("nameError", "name input is vide !");
+    showError("nameError", "l'entrée du nom complet est vide !");
     validname = false;
   } else if (name.match(/[a-z]{3,25}/g)) {
     document.getElementById("nameError").style = "display : none";
     validname = true;
   } else {
-    showError("nameError", "name must be only chars and more then 3 and les then 25");
+    showError("nameError", "le nom ne doit contenir que des caractères et plus de 3 et moins de 25");
     validname = false;
   }
   buttonEnable()
@@ -74,13 +74,13 @@ function validationCin() {
   var cin = document.getElementById('cin').value
 
   if (cin == "") {
-    showError("cinError", "cin input is vide !");
+    showError("cinError", "l'entrée du cin est vide !");
     validcin = false;
   } else if (cin.match(/[A-Z]{2}\d{4,7}/g)) {
     document.getElementById("cinError").style = "display : none";
     validcin = true;
   } else {
-    showError("cinError", "Cin must be valid ");
+    showError("cinError", "Cin doit être valide ");
     validcin = false;
     //console.log("EXEMPLE HH23456")
   }
@@ -90,13 +90,13 @@ function validationCin() {
 function validationPhone() {
   var phone = document.getElementById('phone').value
   if (phone == "") {
-    showError("phoneError", "phone input is vide !");
+    showError("phoneError", "l'entrée du numéro de téléphone est vide !");
     validphone = false;
   } else if (phone.match(/^[+][0-9]*$/g)) {
     document.getElementById("phoneError").style = "display : none";
     validphone = true;
   } else {
-    showError("phoneError", "phone number must be valid ");
+    showError("phoneError", "le numéro de téléphone doit être valide ");
     validphone = false;
   }
   buttonEnable()
@@ -106,12 +106,12 @@ function validationPassword() {
   var password = document.getElementById('password').value;
   validpassword = false;
   if (password == "") {
-    showError("passwordError", "password input is vide !")
+    showError("passwordError", "l'entrée du mot de passe est vide !")
   } else if (password.match(/^.{8,}$/g)) {
     document.getElementById("passwordError").style = "display : none";
     validpassword = true
   } else {
-    showError("passwordError", "password must be more than 8 chars ")
+    showError("passwordError", "le mot de passe doit contenir plus de 8 caractères")
     console.log("password not valid");
     validpassword = false;
   }
@@ -186,10 +186,22 @@ const getData = () => {
     }
   });
 };
+
 const deletee = (id) => {
-  sendHttpRequest('DELETE', 'https://6005eb7d3698a80017de1195.mockapi.io/doctors/' + id).then(responseData => {
-    console.log(responseData);
-    location.reload();
+
+  alertify.confirm('Confirmation de la suppresion', 'êtes-vous sûr de vouloir supprimer ce médecin ?', function () {
+    alertify.success('oui');
+    sendHttpRequest('DELETE', 'https://6005eb7d3698a80017de1195.mockapi.io/doctors/' + id).then(responseData => {
+      console.log(responseData);
+      alertify.alert('information', 'le médecin est supprimé avec succès!', function () {
+        alertify.success('Ok');
+        location.reload()
+      });
+
+    });
+  }, function () {
+    alertify.error('Cancel');
+    console.log("manmeshuch")
   });
 };
 const updatee = (id) => {
@@ -221,7 +233,10 @@ function logupdate() {
     })
     .then(responseData => {
       console.log(responseData);
-      location.reload();
+      alertify.alert('information', 'les informations du médecin ont été mises à jour avec succès!', function () {
+        alertify.success('Ok');
+        location.reload()
+      });
     })
 }
 
@@ -242,7 +257,10 @@ function logSubmit() {
     })
     .then(responseData => {
       console.log(responseData);
-      location.reload();
+      alertify.alert('information', 'vous avez ajouté un médecin avec succès!', function () {
+        alertify.success('Ok');
+        location.reload()
+      });
     })
 }
 const LogIn = () => {
