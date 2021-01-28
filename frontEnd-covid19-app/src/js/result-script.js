@@ -104,7 +104,7 @@ axios.get(`http://localhost:8080/dossier/${id}`)
     axios.get(`http://localhost:8080/fiche/${id}`)
     .then(function (response) {
 
-        console.log(response.data);
+        console.log(response);
         var tbody = document.getElementById("final-result");
         var child = `<tr>
         <td>Date du test  : </td>

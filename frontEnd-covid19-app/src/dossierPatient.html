@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>Covid App !</title>
     <!-- <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet"> -->
-
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
         integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
@@ -31,10 +29,9 @@
                 <a class="sidebar-brand" href="index.html">
                     <span class="align-middle">Vishweb Design</span>
                 </a>
-
                 <ul class="navbar-nav align-self-stretch">
                     <li class="">
-                        <a class="nav-link text-left " role="button" aria-haspopup="true" aria-expanded="false">
+                        <a href="index.html" class="nav-link text-left " role="button" aria-haspopup="true" aria-expanded="false">
                             <i class="flaticon-bar-chart-1"></i> Dashboard
                         </a>
                     </li>
@@ -47,10 +44,7 @@
 
                 </ul>
 
-
             </div>
-
-
         </nav>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
@@ -71,35 +65,14 @@
                             <span></span>
                         </div>
                         <ul class="navbar-nav ml-auto">
-
-                            <!-- Nav Item - Search Dropdown (Visible Only XS) -->
-                            <li class="nav-item dropdown  d-sm-none">
-
-                                <!-- Dropdown - Messages -->
-                                <!-- <div class="dropdown-menu dropdown-menu-right p-3">
-                                    <form class="form-inline mr-auto w-100 navbar-search">
-                                        <div class="input-group">
-                                            <input type="text" class="form-control bg-light border-0 small"
-                                                placeholder="Search for...">
-                                            <div class="input-group-append">
-                                                <button class="btn btn-primary" type="button">
-                                                    <i class="fas fa-search fa-sm"></i>
-                                                </button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div> -->
-
+                            <li class="nav-item dropdown  d-sm-none">      
                             </li>
-
-
                             <!-- Nav Item - Messages -->
                             <li class="nav-item">
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Link</a>
                             </li>
                             </li>
-
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
@@ -160,27 +133,12 @@
                                 </div>
                             </div>
                         </div>
-    
-    
                     </div>
                     <!-- /.container-fluid -->
-
                 </div>
-
-
-
-
-
-
-
-
-
-
             </div>
 
             <!-- ajouter un dossier modal  -->
-
-
 
             <div class="modal fade" id="ajouterDossierModal" tabindex="-1" role="dialog"
                 aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -193,33 +151,42 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form name="contactForm">
+
                                 <div class="form-group">
                                     <label for="prenom" class="col-form-label">Prenom:</label>
-                                    <input type="text" class="form-control" id="prenom">
+                                    <input name="prenom" type="text" class="form-control" id="prenom">
+                                    <div class="Erreur"><span id="prenomErr"></span></div>
                                 </div>
                                 <div class="form-group">
                                     <label for="nom" class="col-form-label">Nom:</label>
-                                    <input type="text" class="form-control" id="nom">
+                                    <input name="name" type="text" class="form-control" id="nom">
+                                    <div class="Erreur"><span id="nomErr"></span></div>
+                                    
                                 </div>
                                 <div class="form-group">
                                     <label for="cin" class="col-form-label">CIN:</label>
                                     <input type="text" class="form-control" id="cin">
+                                    <div class="Erreur"><span id="cinErr"></span></div>
+                                  
                                 </div>
                                 <div class="form-group">
                                     <label for="email" class="col-form-label">Email:</label>
-                                    <input type="text" class="form-control" id="email">
+                                    <input type="email" class="form-control" id="email">
+                                    <div class="Erreur"><span id="emailErr"></span></div>
+                                  
                                 </div>
                                 <div class="form-group">
                                     <label for="telephone" class="col-form-label">Telephone:</label>
                                     <input type="text" class="form-control" id="telephone">
+                                    <div class="Erreur"><span id="telephoneErr"></span></div>
                                 </div>
 
                             </form>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" id="closeDossier" data-dismiss="modal">Close</button>
-                            <button type="button" id="addDossier" class="btn btn-primary">Ajouter</button>
+                            <button type="submit" id="addDossier" class="btn btn-primary">Ajouter</button>
                         </div>
                     </div>
                 </div>
@@ -256,6 +223,7 @@
 
         });
     </script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
     <script src="js/scriptAxios.js"></script>
     <script src="js/jquery.dataTables.min.js"></script>
@@ -266,5 +234,4 @@
         });
     </script>
 </body>
-
 </html>

@@ -16,8 +16,8 @@ axios.get('http://localhost:8080/dossier/')
         child += "<td><label class='label label-danger'>"+element.cin+"</label></td>";
         child += "<td>"+element.email +"</td>";
         child += "<td>"+element.telephone +"</td>";
-        child += "<td><a href='question.html?idDossier="+element._id+"'>Aller Au questionnaire</a></td>";
-        child += "<td><a href='result.html?idDossier="+element._id+"'>Resultat du test </a></td>";
+        child += "<td><a href='question.html?idDossier="+element._id+"'><i class='fas fa-question'></i></a></td>";
+        child += "<td><a href='result.html?idDossier="+element._id+"'><i class='fas fa-poll-h'></i></a></td>";
         child += "</tr>";
     });
     tbody.innerHTML = child;
@@ -34,7 +34,9 @@ addDossier.addEventListener('click', () => {
     var cin = document.getElementById('cin').value;
     var email = document.getElementById('email').value;
     var telephone = document.getElementById('telephone').value;
-  
+   if(valdiate()==true){
+     
+
     var obj =     {
         prenom : prenom,
         nom : nom,
@@ -51,4 +53,38 @@ addDossier.addEventListener('click', () => {
         console.log(err);
     });
     location.reload();
+  
+   }
 })
+
+
+//validate form 
+
+function valdiate(){
+  var prenom = document.getElementById('prenom').value;
+  var nom = document.getElementById('nom').value;
+  var cin = document.getElementById('cin').value;
+  var email = document.getElementById('email').value;
+  var telephone = document.getElementById('telephone').value;
+  var regexEmail = /^\S+@\S+\.\S+$/;
+  var regexTel = /^[1-9]\d{9}$/;
+
+  if (prenom == "" && nom == ""&& cin == ""&& email == ""&& telephone == "") {
+    document.getElementById("prenomErr").innerHTML= "Entrer ton prenom"; 
+    document.getElementById("nomErr").innerHTML= "Entrer ton nom"; 
+    document.getElementById("cinErr").innerHTML= "Entrer ton numero de cin"; 
+    document.getElementById("emailErr").innerHTML= "Entrer ton email"; 
+    document.getElementById("telephoneErr").innerHTML= "Entrer ton numero de telephone"; 
+    return false; 
+  }
+  if(regexEmail.test(email) === false && regexTel.test(telephone) === false){
+      
+    document.getElementById("emailErr").innerHTML= "Entrer un email valide"; 
+    document.getElementById("telephoneErr").innerHTML= "Entrer un numéro de telephone valide"; 
+    return false;
+  }
+   else{
+    return true;
+  }
+}
+

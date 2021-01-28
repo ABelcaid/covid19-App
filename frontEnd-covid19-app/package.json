@@ -1,6 +1,6 @@
 {
-  "name": "frontend-covid19-app",
-  "productName": "frontend-covid19-app",
+  "name": "first-electron-app",
+  "productName": "first-electron-app",
   "version": "1.0.0",
   "description": "My Electron application description",
   "main": "src/index.js",
@@ -9,12 +9,20 @@
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
-    "lint": "echo \"No linting configured\""
+    "lint": "echo \"No linting configured\"",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "keywords": [],
   "author": {
-    "name": "Ayoub Moustahfid",
-    "email": "moustahfidayoub12@gmail.com"
+    "name": "mElhadki",
+    "email": "elhadkimariem3@gmail.com"
+  },
+  "build": {
+    "appId": "MariaPhone",
+    "mac": {
+      "category": "your.app.category.type"
+    }
   },
   "license": "MIT",
   "config": {
@@ -24,7 +32,7 @@
         {
           "name": "@electron-forge/maker-squirrel",
           "config": {
-            "name": "frontend_covid19_app"
+            "name": "first_electron_app"
           }
         },
         {
@@ -44,18 +52,21 @@
       ]
     }
   },
-  "dependencies": {
-    "axios": "^0.21.1",
-    "electron-forge": "^5.2.4",
-    "electron-prebuilt-compile": "^8.2.0",
-    "electron-squirrel-startup": "^1.0.0"
-  },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",
     "@electron-forge/maker-deb": "^6.0.0-beta.54",
     "@electron-forge/maker-rpm": "^6.0.0-beta.54",
     "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
     "@electron-forge/maker-zip": "^6.0.0-beta.54",
-    "electron": "^11.2.0"
+    "@types/jquery": "^3.5.5",
+    "electron": "^11.1.1",
+    "electron-builder": "^22.9.1",
+    "electron-reloader": "^1.1.0",
+    "electron-squirrel-startup": "^1.0.0"
+  },
+  "dependencies": {
+    "notiflix": "^2.7.0",
+    "source-map-support": "^0.5.19",
+    "toastr": "^2.1.4"
   }
 }

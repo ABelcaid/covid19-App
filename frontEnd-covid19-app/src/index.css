@@ -13,8 +13,54 @@ text-decoration:none;
 body,
 html { height: 100%;}
 
+.Erreur{
+  color:red;
+}
+.fa-poll-h,.fa-question {
+  font-weight: 900;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  color: #7be495;
+}
 
-
+.btn-primary {
+  color: #fff;
+  background-color: #28a745;
+  border-color: #1e7e34;
+}
+.btn-primary:hover {
+  color: #fff;
+  background-color: #7be495;
+  border-color: #7be495;
+}
+.page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #1e7e34;
+  border-color: #7be495;
+}
+.page-link:not(:disabled):not(.disabled) {
+  cursor: pointer;
+  color: #7be495;
+}
+.text-primary {
+  color: #1e7e34!important;
+}
+.animatediv{
+  animation: MoveUpDown 10s linear infinite;
+  position: absolute;
+  right: 300px;
+  }
+/* position of corona animation */
+@keyframes MoveUpDown {
+  0%, 100% {
+    top: 150px;
+  }
+  50% {
+    top: 250px;
+  }
+}
 
 
 /*---------------------------------
