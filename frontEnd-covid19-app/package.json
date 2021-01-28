@@ -5,7 +5,7 @@
   "description": "My Electron application description",
   "main": "src/index.js",
   "scripts": {
-    "start": "electron-forge start",
+    "start": "electron .",
     "package": "electron-forge package",
     "make": "electron-forge make",
     "publish": "electron-forge publish",
@@ -15,14 +15,7 @@
   },
   "keywords": [],
   "author": {
-    "name": "mElhadki",
-    "email": "elhadkimariem3@gmail.com"
-  },
-  "build": {
-    "appId": "MariaPhone",
-    "mac": {
-      "category": "your.app.category.type"
-    }
+    "name": "team BMESn"
   },
   "license": "MIT",
   "config": {
@@ -51,6 +44,13 @@
         }
       ]
     }
+  },
+  "dependencies": {
+    "alertifyjs": "^1.13.1",
+    "axios": "^0.21.1",
+    "electron-forge": "^5.2.4",
+    "electron-prebuilt-compile": "^8.2.0",
+    "electron-squirrel-startup": "^1.0.0"
   },
   "devDependencies": {
     "@electron-forge/cli": "^6.0.0-beta.54",

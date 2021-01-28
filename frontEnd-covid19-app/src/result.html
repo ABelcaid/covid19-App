@@ -106,9 +106,9 @@
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown">
-                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small">Vishweb Design</span>
+                                    <span id="docName" class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
                                     <img class="img-profile rounded-circle"
-                                        src="https://i.pinimg.com/736x/77/fb/da/77fbda1dd74e005e2b9f1e6bbde6b474.jpg">
+                                        src="logo3.PNG">
                                 </a>
                             </li>
 
@@ -216,10 +216,11 @@
     </script>
     <script src="js/result-script.js"></script>
 
+    
     <script>
+        let doctorSessiondName = localStorage.getItem('doctorName');
+        document.getElementById('docName').innerHTML = doctorSessiondName;
 
-    </script>
-    <script>
         $('#bar').click(function () {
             $(this).toggleClass('open');
             $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');

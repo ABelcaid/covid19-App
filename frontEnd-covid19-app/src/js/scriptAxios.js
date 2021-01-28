@@ -1,3 +1,6 @@
+let doctorSessiondName = localStorage.getItem('doctorName');
+
+
 axios.get('http://localhost:8080/dossier/')
 .then(function (response) {
     var tbody = document.getElementById("tbody");
