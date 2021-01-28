@@ -1,7 +1,7 @@
 body {
   position: relative;
   overflow-x:hidden;
-  background: #f7f7fc;
+  background: #eeeef1;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -26,8 +26,8 @@ html { height: 100%;}
 
 .btn-primary {
   color: #fff;
-  background-color: #28a745;
-  border-color: #1e7e34;
+  border-color: #7be495;
+  background-image: radial-gradient(#7BE495,#329D9C);
 }
 .btn-primary:hover {
   color: #fff;
@@ -70,12 +70,13 @@ sidebar
 #sidebar-wrapper {
   z-index: 1000;
   height: 100%;
-width:0px;
-left: -50px;
+  width:0px;
+  left: -50px;
   overflow-y: auto;
   overflow-x: hidden;
   background: #222e3c;
   transition: all 0.5s ease;
+  background-image: radial-gradient(#7BE495,#329D9C);
 }
 
 #sidebar-wrapper::-webkit-scrollbar {
@@ -104,7 +105,7 @@ text-transform:capitalize;
 }
 
 .navbar-nav > li > a ,.submenu-box ul li a{
-  color:gray!important;
+  color:#f8f9fa!important;
   text-transform: capitalize;
   font-size: 14px;
   padding:10px 10px 10px 20px!important;
@@ -120,13 +121,10 @@ text-transform:capitalize;
 padding:4px 10px 4px 20px!important;
 color:#c1c1c1!important;
 }
-
-
-
 .navbar-nav > li > a.active{
-   color: #e9ecef!important;
-  background: linear-gradient(90deg,rgba(59,125,221,.1),rgba(59,125,221,.0875) 50%,transparent);
-  border-left:4px solid #3b7ddd;
+    color: #e9ecef!important;
+    background: linear-gradient(90deg,#e27d607d,rgb(221 209 59 / 14%) 50%,transparent);
+    border-left: 4px solid #e8a87c;
 }
 
 .navbar-nav .has-sub > a.collapsed::after {
@@ -200,10 +198,6 @@ font-size:14px;
 /*---------------------------------
 sidebar
 ----------------------*/
-
-
-
-
 
 
 /*---------------------------------

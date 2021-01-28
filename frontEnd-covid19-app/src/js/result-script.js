@@ -5,123 +5,232 @@ console.log(id)
 
 
 
-axios.get(`http://localhost:8080/dossier/${id}`)
+    axios.get(`http://localhost:8080/dossier/${id}`)
     .then(function (response) {
 
-        console.log(response.data);
-        var tbody = document.getElementById("personal-info");
-        var child = `<tr>
-        <td>Prenom : </td>
-        <td>${response.data.prenom}</td>
-        </tr>
-        <tr>
-        <td>Nom : </td>
-        <td>${response.data.nom}</td>
-        </tr>
-        <tr>
-        <td>CIN : </td>
-        <td>${response.data.cin}</td>
-        </tr>
-        <tr>
-        <td>Email : </td>
-        <td>${response.data.email}</td>
-        </tr>
-        <tr>
-        <td>Telephone : </td>
-        <td>${response.data.telephone}</td>
-        </tr>`;
+        var tbody = document.getElementById("card1");
+        var tbody2 = document.getElementById("cart2");
+        var card = `
+        <h4>${response.data.prenom}</h4>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+        data-whatever="@mdo">Edit Reslut </button>
+        `;
+        tbody.innerHTML = card;
+        var card2 = `
+        <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Full Name</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.prenom} ${response.data.nom}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Email</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.email}
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Phone</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.telephone}
+        </div>
+      </div>
+      <hr>
 
-        tbody.innerHTML = child;
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">CIN</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.cin}
+        </div>
+      </div>
+        `;
+        tbody2.innerHTML = card2;
     })
     .catch(function (err) {
         console.log(err);
     });
 
 
+    //get question 
+
+    axios.get(`http://localhost:8080/fiche/${id}`)
+    .then(function (response) {
+
+        console.log(response.data);
+        var cardQ = document.getElementById("cardR");
+        var child = `
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Date</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+          ${response.data.dateTest}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <h6 class="mb-0">Result</h6>
+          </div>
+          <div class="col-sm-9 text-secondary">
+          ${response.data.rsTest}
+          </div>
+        </div>`;
+
+        cardQ.innerHTML = child;
+    })
+    .catch(function (err) {
+        console.log(err);
+    });
 
     axios.get(`http://localhost:8080/question/${id}`)
     .then(function (response) {
 
         console.log(response.data);
-        var tbody = document.getElementById("question-result");
-        var child = `<tr>
-        <td>Fiévre (Température mesurée >38°) : </td>
-        <td>${response.data.fievre}</td>
-        </tr>
-        <tr>
-        <td>Toux séche : </td>
-        <td>${response.data.toux_seche}</td>
-        </tr>
-        <tr>
-        <td>Difficultés a respirer : </td>
-        <td>${response.data.difficultes_a_respirer}</td>
-        </tr>
-        <tr>
-        <td>Maux de gorge : </td>
-        <td>${response.data.maux_de_gorge}</td>
-        </tr>
-        <tr>
-        <td>Rhinite : </td>
-        <td>${response.data.rhinite}</td>
-        </tr>
-        <tr>
-        <td>Douleur dans les muscles (courbatures) : </td>
-        <td>${response.data.douleur_dans_les_muscles}</td>
-        </tr>
-        <tr>
-        <td>Fatigue importante  : </td>
-        <td>${response.data.fatigue}</td>
-        </tr>
-        <tr>
-        <td>Maux de téte : </td>
-        <td>${response.data.maux_de_tete}</td>
-        </tr>
-        <tr>
-        <td>Diarrhéee : </td>
-        <td>${response.data.diarrhees}</td>
-        </tr>
-        <tr>
-        <td>Nuasées et/ou Vomissements : </td>
-        <td>${response.data.nausees_vomissement}</td>
-        </tr>
-        <tr>
-        <td>Anosmie (perte de l'odorat) : </td>
-        <td>${response.data.anosmie}</td>
-        </tr>
-        <tr>
-        <td>Agueusie (perte du gout) : </td>
-        <td>${response.data.agueusie}</td>
-        </tr>`;
+        var cardQ = document.getElementById("cardQ");
+        var child = `<div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Fiévre:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.fievre}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Toux seche:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.toux_seche}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Difficultes a respirer:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.difficultes_a_respirer}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Maux de gorge:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.maux_de_gorge}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Rhinite:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.rhinite}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Douleur dans les muscles:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.douleur_dans_les_muscles}
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Fatigue:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.fatigue}
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Maux de tete:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.maux_de_tete}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Diarrhees:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.diarrhees}
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Nausees vomissement:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.nausees_vomissement}
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Anosmie:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.anosmie}
+        </div>
+      </div>
+      <hr>
+      
+      <div class="row">
+        <div class="col-sm-3">
+          <h6 class="mb-0">Agueusie:</h6>
+        </div>
+        <div class="col-sm-9 text-secondary">
+        ${response.data.agueusie}
+        </div>
+      </div>
+      <hr>
+      `;
 
-        tbody.innerHTML = child;
+        cardQ.innerHTML = child;
     })
     .catch(function (err) {
         console.log(err);
     });
-
     
-
-    axios.get(`http://localhost:8080/fiche/${id}`)
-    .then(function (response) {
-
-        console.log(response);
-        var tbody = document.getElementById("final-result");
-        var child = `<tr>
-        <td>Date du test  : </td>
-        <td>${response.data.dateTest}</td>
-        </tr>
-        <tr>
-        <td>Resultat test : </td>
-        <td>${response.data.rsTest}</td>
-        </tr>`;
-
-        tbody.innerHTML = child;
-    })
-    .catch(function (err) {
-        console.log(err);
-    });
-    
-
 
     // -------------------------update result ----------------------------
 
@@ -141,8 +250,6 @@ axios.get(`http://localhost:8080/dossier/${id}`)
     });
     location.reload();
 })
-
-
 
 
 
@@ -176,4 +283,10 @@ axios.get(`http://localhost:8080/dossier/${id}`)
         console.log(err);
     });
 
+})
+
+var pdfBtn = document.getElementById("pdfPrint");
+
+pdfBtn.addEventListener('click', () => {
+    window.open(`http://localhost:8080/pdf/${id}`, '_blank');
 })

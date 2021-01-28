@@ -275,7 +275,7 @@ const LogIn = () => {
         console.log(responseData[i].email)
         console.log(responseData[i].Password)
         if (email == responseData[i].email && password == responseData[i].Password) {
-          window.location.replace("../index.html");
+          window.location.replace("../covid-summury.html");
           localStorage.setItem('doctorName', responseData[i].fullname)
           break;
         } else {

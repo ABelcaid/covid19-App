@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="css/question-style.css">
-    <title>Title</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>diagnostic covid-19</title>
+    <style>
+    </style>
 </head>
 
 <body>
@@ -22,40 +25,55 @@
         <nav class="fixed-top align-top" id="sidebar-wrapper" role="navigation">
             <div class="simplebar-content" style="padding: 0px;">
                 <a class="sidebar-brand" href="index.html">
-                    <span class="align-middle">Vishweb Design</span>
+                    <span class="align-middle">covid App</span>
                 </a>
 
                 <ul class="navbar-nav align-self-stretch">
-                    <li class="">
-                        <a class="nav-link text-left " role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="flaticon-bar-chart-1"></i> Dashboard
-                        </a>
-                    </li>
+                  
                     <li class="">
                         <a href="dossierPatient.html" class="nav-link text-left active" role="button"
                             aria-haspopup="true" aria-expanded="false">
                             <i class="flaticon-bar-chart-1"></i> Dossier Patient
                         </a>
                     </li>
+                    <li class="has-sub">
+                      <a class="nav-link collapsed text-left" href="#collapseExample2" role="button"
+                        data-toggle="collapse">
+                        <i class="flaticon-user"></i> Board Covid 19
+                      </a>
+                      <div class="collapse menu mega-dropdown" id="collapseExample2">
+                        <div class="dropmenu" aria-labelledby="navbarDropdown">
+                          <div class="container-fluid ">
+                            <div class="row">
+                              <div class="col-lg-12 px-2">
+                                <div class="submenu-box">
+                                  <ul class="list-unstyled m-0">
+                                    <li><a href="covid-summury.html">Summury</a></li>
+                                                              <li><a href="covid-country.html">Country</a></li>
+                                                              <li><a href="map-covid-country.html">Map Covid</a></li>
+                                                              <li><a href="covid-date.html">Covid With Date</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+          
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </li>
 
                 </ul>
 
 
             </div>
-
-
         </nav>
         <!-- /#sidebar-wrapper -->
         <!-- Page Content -->
         <div id="page-content-wrapper">
-
-
             <div id="content">
-
                 <div class="container-fluid p-0 px-lg-0 px-md-0">
                     <!-- Topbar -->
                     <nav class="navbar navbar-expand navbar-light my-navbar">
-
                         <!-- Sidebar Toggle (Topbar) -->
                         <div type="button" id="bar" class="nav-icon1 hamburger animated fadeInLeft is-closed"
                             data-toggle="offcanvas">
@@ -68,18 +86,13 @@
                             <!-- Nav Item - Search Dropdown (Visible Only XS) -->
                             <li class="nav-item dropdown  d-sm-none">
                             </li>
-                            <!-- Nav Item - Messages -->
-                            <li class="nav-item">
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Link</a>
-                            </li>
-                            </li>
+                         
 
                             <!-- Nav Item - User Information -->
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
                                     data-toggle="dropdown">
-                                    <span id="docName" class="mr-2 d-none d-lg-inline text-gray-600 small"></span>
+                                    <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="docName" ></span>
                                     <img class="img-profile rounded-circle" src="logo3.PNG">
                                 </a>
                             </li>
@@ -88,20 +101,23 @@
 
                     </nav>
                     <!-- End of Topbar -->
-                 
+                    <div class="animatediv"> 
+                      <img src="https://atheistiran.com/wp-content/uploads/2020/03/corona-virus.png">
+                        </div>
                     <!-- Begin Page Content -->
-                    <div class="container-fluid"> 
+                    <div class="container-fluid">
+                      <h1>Diagnostic covid-19</h1>
                         <form action="">
-                          <img id="imgQ" src="https://atheistiran.com/wp-content/uploads/2020/03/people-mask.png" class="TopImage">
+                              
                             <div class="wrap">
                               <div class="row">
                                 <section data-quiz-item="">
                                   <div class="question">Fiévre (Température mesurée >38°) </div>
                                   <div class="choices">
                         
-                                    <input name="q1" id="q1True" type="radio" value="oui">
+                                    <input name="q1" id="q1True"  type="radio" value="oui">
                                     <label for="q1True">Oui</label>
-                                    <input name="q1" id="q1False" type="radio" value="non">
+                                    <input name="q1" id="q1False"  type="radio" value="non">
                                     <label for="q1False">Non</label>
                         
                                   </div>
@@ -110,9 +126,9 @@
                                   <div class="question">Toux séche </div>
                                   <div class="choices">
                         
-                                    <input name="q2" id="q2True" type="radio" value="oui">
+                                    <input name="q2" id="q2True" class="answers" type="radio" value="oui">
                                     <label for="q2True">Oui</label>
-                                    <input name="q2" id="q2False" type="radio" value="non">
+                                    <input name="q2" id="q2False" class="answers" type="radio" value="non">
                                     <label for="q2False">Non</label>
                         
                                   </div>
@@ -124,9 +140,9 @@
                                   </div>
                         
                                   <div class="choices">
-                                    <input name="q3" id="q3True" type="radio" value="oui">
+                                    <input name="q3" id="q3True" class="answers" type="radio" value="oui">
                                     <label for="q3True">Oui</label>
-                                    <input name="q3" id="q3False" type="radio" value="non">
+                                    <input name="q3" id="q3False" class="answers" type="radio" value="non">
                                     <label for="q3False">Non</label>
                         
                                   </div>
@@ -135,9 +151,9 @@
                                   <div class="question">Maux de gorge </div>
                                   <div class="choices">
                         
-                                    <input name="q4" id="q4True" type="radio" value="oui">
+                                    <input name="q4" id="q4True" class="answers" type="radio" value="oui">
                                     <label for="q4True">Oui</label>
-                                    <input name="q4" id="q4False" type="radio" value="non">
+                                    <input name="q4" id="q4False" class="answers" type="radio" value="non">
                                     <label for="q4False">Non</label>
                         
                                   </div>
@@ -148,9 +164,9 @@
                                   <div class="question">Rhinite </div>
                                   <div class="choices">
                         
-                                    <input name="q5" id="q5True" type="radio" value="oui">
+                                    <input name="q5" id="q5True" class="answers" type="radio" value="oui">
                                     <label for="q5True">Oui</label>
-                                    <input name="q5" id="q5False" type="radio" value="non">
+                                    <input name="q5" id="q5False" class="answers" type="radio" value="non">
                                     <label for="q5False">Non</label>
                         
                                   </div>
@@ -159,9 +175,9 @@
                                   <div class="question">Douleur dans les muscles (courbatures) </div>
                                   <div class="choices">
                         
-                                    <input name="q6" id="q6True" type="radio" value="oui">
+                                    <input name="q6" id="q6True" class="answers" type="radio" value="oui">
                                     <label for="q6True">Oui</label>
-                                    <input name="q6" id="q6False" type="radio" value="non">
+                                    <input name="q6" id="q6False" class="answers" type="radio" value="non">
                                     <label for="q6False">Non</label>
                         
                                   </div>
@@ -172,9 +188,9 @@
                                   <div class="question">Fatigue importante </div>
                                   <div class="choices">
                         
-                                    <input name="q7" id="q7True" type="radio" value="oui">
+                                    <input name="q7" id="q7True" class="answers" type="radio" value="oui">
                                     <label for="q7True">Oui</label>
-                                    <input name="q7" id="q7False" type="radio" value="non">
+                                    <input name="q7" id="q7False" class="answers" type="radio" value="non">
                                     <label for="q7False">Non</label>
                         
                                   </div>
@@ -183,9 +199,9 @@
                                   <div class="question">Maux de téte </div>
                                   <div class="choices">
                         
-                                    <input name="q8" id="q8True" type="radio" value="oui">
+                                    <input name="q8" id="q8True" class="answers" type="radio" value="oui">
                                     <label for="q8True">Oui</label>
-                                    <input name="q8" id="q8False" type="radio" value="non">
+                                    <input name="q8" id="q8False" class="answers" type="radio" value="non">
                                     <label for="q8False">Non</label>
                         
                                   </div>
@@ -239,34 +255,21 @@
                         
                                   </div>
                                 </section>
-                                 <!-- Corona animation container -->
                               </div>
                               <div class="submit">
                                 <button type="button" id="q-submit" class="btn btn-primary">Submit Answers</button>
                               </div>
                             </div>
                           </form>
-                   
-                
+                         
+                        
+                        
     
                     </div>
                     <!-- /.container-fluid -->
 
                 </div>
-
-
-
-
-
-
-
-
-
-
             </div>
-
-    
-
         </div>
         <!-- /#page-content-wrapper -->
 
@@ -279,19 +282,9 @@
 
     <script src="js/question-script.js"></script>
 
-    <script>
-     
-    </script>
-    <script>
-      let doctorSessiondName = localStorage.getItem('doctorName');
-        document.getElementById('docName').innerHTML = doctorSessiondName;
+  
+    <script src="js/globalScript.js"></script>
 
-        $('#bar').click(function () {
-            $(this).toggleClass('open');
-            $('#page-content-wrapper ,#sidebar-wrapper').toggleClass('toggled');
-
-        });
-    </script>
 </body>
 
 </html>
