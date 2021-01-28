@@ -72,6 +72,8 @@ app.use("/question", questionRouter);
 const fichePatientRouter = require("./routes/fichePatient");
 app.use("/fiche", fichePatientRouter);
 
+const pdfRouter = require("./routes/pdf");
+app.use("/pdf", pdfRouter);
 // app.listen(port, () => {
 //   console.log(` Server is running on port : ${port}`);
 // });

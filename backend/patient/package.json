@@ -51,6 +51,8 @@
     "electron-forge": "^5.2.4",
     "electron-prebuilt-compile": "^8.2.0",
     "electron-squirrel-startup": "^1.0.0",
+    "express": "^4.17.1",
+    "html-pdf": "^2.2.0",
     "mongoose": "^5.11.13",
     "winston": "^3.3.3"
   },
