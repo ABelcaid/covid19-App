@@ -97,7 +97,7 @@ Run the application
 ![trello](https://user-images.githubusercontent.com/57228120/106212637-4f341200-61cb-11eb-81ee-0fbc18037c59.PNG)
 
 
-#### Short Description GIF
+#### Short Description 
 
 ![home page](https://user-images.githubusercontent.com/57228120/106212577-33307080-61cb-11eb-868b-e8360f9cbf19.PNG)
 
